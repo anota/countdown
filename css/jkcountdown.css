@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.fanye-container{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+    background: #f0f0f0;
+}
+
+#jk-countdown >div{
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    background: #ccc;
+    position: relative;
+    overflow: hidden;
+}
+
+#jk-countdown >div >span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
+
+#jk-countdown >div .add{
+    top: -30px;
+}
