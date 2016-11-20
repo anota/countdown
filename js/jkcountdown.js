@@ -2,13 +2,20 @@ function jkCountDown(opts){
     var dataNum = opts.num;
     var el = $(opts.el);
     var tmpNum = 0;
-    var weiNum = 0;
     var numLen = dataNum.toString().length;
+    //防止初始化数字为零的时候不滚动
+    var addLen = opts.add.toString().length;
+    var tmpkey = false;
+    var tmpInt = 0;
+    if(addLen > 1){
+        tmpkey = true;
+        tmpInt += Number(dataNum.toString().slice(numLen-addLen+1));
+    }
+
     //生成位数容器
     addcon();
     var divel = opts.el+' div';
     var els = $(divel);
-
 
     var addnumInt  = setInterval(addnum,opts.speed);
 
@@ -21,10 +28,15 @@ function jkCountDown(opts){
 
     function addnum(){
         var contrastNum = tmpNum;
-        tmpNum = tmpNum +opts.add
+        tmpNum = tmpNum +opts.add;
+
+        if(tmpkey){
+            tmpNum += tmpInt;
+            tmpkey = false;
+        }
 
         if(tmpNum > dataNum){
-            tmpNum = dataNum
+            tmpNum = dataNum;
         }
 
         addData(contrastNum);
