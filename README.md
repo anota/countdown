@@ -28,24 +28,36 @@
 
 ### 3.实例化
 ```
-var jkcountdown = new jkCountDown({
-    el:'#jk-countdown',
-    num:42,
+$('#jk-countdown').jkcount({
+    num:112,
+    step:3,
     speed:100,
-    add:1,
+    type:'down',
     addAnimate:{'top':30},
     removeAnimate:{'top':0},
-    callback:function(el,num){
-        console.log(el);
-        console.log(num)
+    callback:function(){
+        console.log('done!');
     }
 });
 ```
 
-* el:实例根元素选择器
+
 * num:需要倒数的数字大小
-* speed：倒数的时间间隔
-* add:每次增加多少位数
+* speed:倒数的时间间隔
+* type:add || down 增计时，倒计时
+* step:每次增加或减少多少单位
 * addAnimate:.add的动画
 * removeAnimate:.show的移除动画
 * callback:执行完毕回调函数
+
+### 4.开启
+```
+jkcount.start();
+```
+开启可以穿入参数覆盖实例化参数
+```
+jkcount.start({
+    type:'add',
+    num:110
+});
+```
