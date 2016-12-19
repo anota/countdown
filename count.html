@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>yanye</title>
     <link rel="stylesheet" type="text/css" href="css/jkcountdown.css">
 </head>
+
 <body>
     <div class="fanye-container">
-        <div id="jk-countdown"></div>
+        <div id="jk-countdown" class="jk-countdown"></div>
+        <div id="jk-countdown2" class="jk-countdown"></div>
     </div>
-    <script type="text/javascript" src="js/jquery-3.1.0.min.js" ></script>
-    <script type="text/javascript" src="js/jscount.js" ></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jscount.js"></script>
 
     <script type="text/javascript">
-
-        var jkcount = $('#jk-countdown').jkcount({
-            num:112,
-            step:3,
-            speed:100,
-            type:'down',
-            addAnimate:{'top':30},
-            removeAnimate:{'top':0},
-            callback:function(){
-                console.log('done!');
+        var jkcount2 = $('#jk-countdown2').jkcount({
+            num: 150,
+            step: 3,
+            speed: 100,
+            type: 'down',
+            addAnimate: {
+                'top': 30
+            },
+            removeAnimate: {
+                'top': 0
+            },
+            callback: function() {
+                console.log('done2!');
             }
         })
 
-        jkcount.start({
-            type:'add',
-            num:110
+        var jkcount = $('#jk-countdown').jkcount({
+            num: 112,
+            step: 3,
+            speed: 100,
+            type: 'add',
+            addAnimate: {
+                'top': 30
+            },
+            removeAnimate: {
+                'top': 0
+            },
+            callback: function() {
+                console.log('done!');
+            }
         })
-
     </script>
 </body>
+
 </html>
