@@ -49,15 +49,3 @@ $('#jk-countdown').jkcount({
 * addAnimate:.add的动画
 * removeAnimate:.show的移除动画
 * callback:执行完毕回调函数
-
-### 4.开启
-```
-jkcount.start();
-```
-开启可以穿入参数覆盖实例化参数
-```
-jkcount.start({
-    type:'add',
-    num:110
-});
-```
